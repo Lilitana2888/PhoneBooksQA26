@@ -1,30 +1,27 @@
 package com.telran.tests;
 
+import com.telran.model.User;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest{
 
     @Test
-    public void testLogin() {
-        openLoginForm();
-        fillLoginForm();
-        confirmLoginForm();
+    public void testLogin() throws InterruptedException {
+//        app.getUser().openLoginForm();
+//        app.getUser().fillLoginForm(new User()
+//                .withEmail("Test602@mail.ru")//Test2222@mail.ru for contact [href='/contacts']
+//                .withPswd("Test$12345"));
+//       app.getUser().confirmLoginForm();
+
+        app.getUser().userLogin();
+        app.getUser().pause(2000);
+
+        Assert.assertTrue(app.getUser().isUserLogined());
     }
 
-    public void confirmLoginForm() {
-        app.getUser().click(By.xpath("//button[contains(.,'Login')]"));
-    }
 
-    public void fillLoginForm() {
-
-        app.getUser().type(By.cssSelector("[placeholder='Email']"),"Test1611006634796@mail.ru");
-        app.getUser().type(By.cssSelector("[placeholder='Password']"),"Test$12345");
-    }
-
-    public void openLoginForm() {
-      //  app.wd.findElement(By.cssSelector("[href='/login'"));
-    }
 
 
 }

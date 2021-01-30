@@ -15,7 +15,7 @@ public class BaseTest {
         app.start();
     }
 
-    @AfterMethod
+    @AfterMethod()
     public void tearDown() throws InterruptedException {
       //  app.pause(4000);
         app.stop();

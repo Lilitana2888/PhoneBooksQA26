@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     WebDriver wd;
     UserHelper user;
+    ContactHelper contact;
 
 
 
@@ -21,8 +22,14 @@ public class ApplicationManager {
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         user = new UserHelper(wd);
+        contact = new ContactHelper(wd);
 
     }
+
+    public ContactHelper getContact() {
+        return contact;
+    }
+
     public UserHelper getUser() {
         return user;
     }

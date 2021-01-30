@@ -3,7 +3,7 @@ package com.telran.model;
 public class Contact {
 
     private String name;
-    private String lname;
+    private String surName;
     private String phone;
     private String email;
     private String address;
@@ -14,8 +14,8 @@ public class Contact {
         return this;
     }
 
-    public Contact withLname(String lname) {
-        lname = lname;
+    public Contact withSurName(String lname) {
+        surName = lname;
         return this;
     }
 
@@ -43,8 +43,8 @@ public class Contact {
         return name;
     }
 
-    public String getLname() {
-        return lname;
+    public String getSurName() {
+        return surName;
     }
 
     public String getPhone() {

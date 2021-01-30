@@ -14,24 +14,25 @@ public class AddContactTest extends BaseTest {
     }
 
     @Test
-    public void testAddContactTest() {
+    public void testAddContactTest() throws InterruptedException {
 
         //for create date
         int i = (int) (System.currentTimeMillis()/1000%3600);
         String name = "Lili"+ i;
-        String lname = "PO"+ i;
+        String surName = "POky"+ i;
         String phone = "123456"+ i;
         String email = "Lili"+ i + "@mail.com";
         String address = "Herclia";
         String description = "my new contact";
         app.getContact().clickOnAddBtn();
+        app.getUser().pause(1000);
         app.getContact().fillContactForm(new Contact()
-                .withName("name")
-                .withLname("lname")
-                .withPhone("phone")
-                .withEmail("email")
-                .withAddress("address")
-                .withDescription("description"));
+                .withName(name)
+                .withSurName(surName)
+                .withPhone(phone)
+                .withEmail(email)
+                .withAddress(address)
+                .withDescription(description));
         app.getContact().clickSaveBtn();
         //Assert
     }

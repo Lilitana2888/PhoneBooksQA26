@@ -2,12 +2,12 @@ package com.telran.model;
 
 public class Contact {
 
-    public String name;
-    public String lname;
-    public String phone;
-    public String email;
-    public String address;
-    public String description;
+    private String name;
+    private String lname;
+    private String phone;
+    private String email;
+    private String address;
+    private String description;
 
     public Contact withName(String name) {
         this.name = name;

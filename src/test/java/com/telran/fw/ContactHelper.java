@@ -18,9 +18,14 @@ public class ContactHelper extends HelperBase{
     public void fillContactForm(Contact con) {
         type(By.cssSelector("[placeholder='Name']"),con.getName());
         type(By.cssSelector("[placeholder='Last Name']"),con.getLname());
-        type(By.cssSelector(""),con.getPhone());
-        type(By.cssSelector(""),con.getEmail());
-        type(By.cssSelector(""),con.getAddress());
-        type(By.cssSelector(""),con.getDescription());
+        type(By.cssSelector("[placeholder='Phone']"),con.getPhone());
+        type(By.cssSelector("[placeholder='email']"),con.getEmail());
+        type(By.cssSelector("[placeholder='Address']"),con.getAddress());
+        type(By.cssSelector("[placeholder='description']"),con.getDescription());
+    }
+
+    public void clickSaveBtn() {
+
+        click(By.xpath("//button[.='Save']"));
     }
 }

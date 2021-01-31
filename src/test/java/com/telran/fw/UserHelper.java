@@ -20,6 +20,7 @@ public class UserHelper extends HelperBase{
     }
     public void clickOnRegistration()
     {
+
         wd.findElement(By.xpath("//*[.=' Registration']")).click();
     }
 
@@ -28,7 +29,7 @@ public class UserHelper extends HelperBase{
     {
        openLoginForm();
        fillLoginForm(new User()
-                .withEmail("Test602@mail.ru")//Test2222@mail.ru for contact [href='/contacts']
+                .withEmail("Test602@mail.ru")
                 .withPswd("Test$12345"));
         confirmLoginForm();
     }
@@ -40,13 +41,12 @@ public class UserHelper extends HelperBase{
     public void fillLoginForm(User user) {
 
         type(By.cssSelector("input[placeholder='Email']"), user.getEmail());
-        type(By.cssSelector("[placeholder='Password']"), user.getPswd());//"Test$12345"
+        type(By.cssSelector("[placeholder='Password']"), user.getPswd());
     }
 
     public void openLoginForm() {
 
-     //   wd.findElement(By.cssSelector("[href='/login'"));
-        click(By.cssSelector("[href='/login']"));
+            click(By.cssSelector("[href='/login']"));
     }
 
     public boolean isUserLogined() {

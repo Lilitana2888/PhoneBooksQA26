@@ -1,6 +1,7 @@
 package com.telran.tests;
 
 import com.telran.model.Contact;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ public class AddContactTest extends BaseTest {
     }
 
     @Test
-    public void testAddContactTest() throws InterruptedException {
+    public void testAddContact() throws InterruptedException {
 
         //for create date
         int i = (int) (System.currentTimeMillis()/1000%3600);
@@ -24,6 +25,8 @@ public class AddContactTest extends BaseTest {
         String email = "Lili"+ i + "@mail.com";
         String address = "Herclia";
         String description = "my new contact";
+
+        app.getContact().clickContactBtn();
         app.getContact().clickOnAddBtn();
         app.getUser().pause(1000);
         app.getContact().fillContactForm(new Contact()
@@ -34,6 +37,6 @@ public class AddContactTest extends BaseTest {
                 .withAddress(address)
                 .withDescription(description));
         app.getContact().clickSaveBtn();
-        //Assert
+        Assert.assertTrue(app.getContact().isNameExist(name));
     }
 }

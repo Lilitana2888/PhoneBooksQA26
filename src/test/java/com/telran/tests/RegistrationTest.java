@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class RegistrationTest extends BaseTest{
 
-    @Test
+    @Test(enabled = false)
     public void testRegistration() throws InterruptedException {
 
         app.getUser().clickOnLoginBtn();
